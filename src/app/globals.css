@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+	.btn {
+		@apply inline-flex justify-center items-center px-4 py-2 font-medium rounded-lg mt-[30px] tracking-tight
+	}
+
+	.btn-primary {
+		@apply bg-primary-950 text-white py-2 px-6 rounded-lg
+	}
+
+	.btn-text {
+		@apply bg-transparent text-primary-950 py-2 px-6 border border-primary-950 rounded-lg
+	}
+
+		.logo-ticker-image {
+			@apply h-auto w-52 object-contain grayscale transition-all duration-300 hover:grayscale-0;
+		}
+		.tag{
+			@apply text-sm inline-flex border border-[#222]/10 px-3 py-1 rounded-lg tracking-tight
+		}
+}
+@layer utilities {
+	.grayscale {
+		filter: grayscale(100%);
+	}
+}

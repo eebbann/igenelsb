@@ -1,5 +1,5 @@
 {
-  "name": "light-saas-landing-page",
+  "name": "igene",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,10 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "framer-motion": "^11.2.14",
-    "next": "14.2.4",
+    "@heroicons/react": "^2.1.5",
+    "@sanity/icons": "^3.6.0",
+    "@sanity/image-url": "^1.1.0",
+    "@sanity/vision": "^3.77.1",
+    "@tabler/icons-react": "^3.20.0",
+    "clsx": "^2.1.1",
+    "esbuild": "^0.25.0",
+    "framer-motion": "^11.11.9",
+    "next": "^15.1.7",
+    "next-sanity": "^9.8.59",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-fast-marquee": "^1.6.5",
+    "sanity": "^3.77.1",
+    "styled-components": "^6.1.15"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
@@ -22,7 +33,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
     "postcss": "^8",
-    "tailwind-merge": "^2.4.0",
+    "tailwind-merge": "^2.5.4",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
