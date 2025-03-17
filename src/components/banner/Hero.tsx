@@ -3,6 +3,7 @@ import Image from "next/image";
 import { TextGenerateEffect } from "../ui/TextGenerateEffect";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import hero from "@/assets/cog.png";
 
 interface HeroProps {
     isHomePage?: boolean;
@@ -26,7 +27,7 @@ export const Hero = ({ isHomePage = false, heading, subheading, heroImage, altTe
 							{isHomePage ? (
 								<TextGenerateEffect
 									className="text-5xl md:text-[4.4rem] font-bold tracking-tighter bg-gradient-to-b from-black to-[#001e80] bg-clip-text text-transparent"
-									words={heading || ""}
+									words={heading || "Welcome to Igene"}
 								/>
 							) : (
 								<h1 className="text-5xl md:text-[4rem] font-bold tracking-tighter bg-gradient-to-b from-black to-[#001e80] bg-clip-text text-transparent">
@@ -35,7 +36,7 @@ export const Hero = ({ isHomePage = false, heading, subheading, heroImage, altTe
 							)}
 
 							<p className="text-xl text-[#010d3d] tracking-tight mt-6">
-								{subheading}
+								{subheading || "Advancing the future of life sciences through innovation and research."}
 							</p>
 							{isHomePage && (
 								<div>
@@ -50,7 +51,7 @@ export const Hero = ({ isHomePage = false, heading, subheading, heroImage, altTe
 						<div className="md:mt-0 mt-20 md:h-[508px] md:flex-1 relative z-0">
 							{heroImage && (
 								<Image
-									src={heroImage}
+									src={heroImage || hero}
 									alt={altText || "Hero Image"}
 									className="w-full h-auto object-contain md:absolute md:w-[607px] md:max-w-none md:-left-6"
 									width={617}

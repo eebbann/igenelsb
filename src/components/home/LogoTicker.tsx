@@ -1,19 +1,15 @@
-"use client"
-import inqaba from "@/assets/logo-inqababiotech.png";
-import biologix from "@/assets/logo-biologix.png";
-import biochemical from "@/assets/logo-biochemical.png";
-import foundation from "@/assets/logo-sfn.png";
+// components/home/LogoTicker.tsx
+"use client"; // Ensure this is a client component
+
 import Image from "next/image";
 import { useState } from "react";
 
-export const LogoTicker = () => {
+interface LogoTickerProps {
+	logos: { src: string; alt: string }[];
+}
+
+export const LogoTicker = ({ logos }: LogoTickerProps) => {
 	const [hoveredLogo, setHoveredLogo] = useState<string | null>(null);
-	const logos = [
-		{ src: inqaba, alt: "inqaba" },
-		{ src: biologix, alt: "biologix" },
-		{ src: biochemical, alt: "biochemical" },
-		{ src: foundation, alt: "foundation" },
-	];
 
 	return (
 		<div className="py-8 md:py-12 bg-white">
@@ -25,7 +21,8 @@ export const LogoTicker = () => {
 								key={logo.alt}
 								src={logo.src}
 								alt={logo.alt}
-							 
+								width={100} // Adjust size as needed
+								height={50}
 								className={`logo-ticker-image transition-filter duration-300 ${
 									hoveredLogo === logo.alt ? "" : "grayscale"
 								}`}

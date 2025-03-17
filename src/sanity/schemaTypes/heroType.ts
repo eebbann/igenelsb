@@ -1,50 +1,47 @@
-import { title } from 'process';
-import { defineField, defineType } from 'sanity'
+import { defineType, defineField } from "sanity";
 
-export const heroType = defineType({
-					name: "heroType",
-					title: "Hero",
-					type: "object", // This schema is a document (one per page)
-					fields: [
-						// Hero Section
-						defineField({
-							name: "heading",
-							type: "string",
-						}),
-						defineField({
-							name: "subheading",
-							type: "string",
-						}),
-						defineField({
-							name: "slug",
-							type: "string",
-						}),
-						defineField({
-							name: "image", 
-							type: "image", // Image field for the hero image
-							options: {
-								hotspot: true, },
-							fields:[
-								defineField({
-									name:"alt",
-									type:"string",
-									title:"Alternative text"
-								}),
-							], 
-						}),
-					],
+const heroType = defineType({
+	name: "heroType",
+	title: "Hero Section",
+	type: "object", // ✅ This must be "object"
+	fields: [
+		defineField({
+			name: "heading",
+			type: "string",
+			title: "Heading",
+		}),
+		defineField({
+			name: "subheading",
+			type: "string",
+			title: "Subheading",
+		}),
+		defineField({
+			name: "image",
+			type: "image",
+			title: "Hero Image",
+			options: { hotspot: true },
+			fields: [
+				defineField({
+					name: "alt",
+					type: "string",
+					title: "Alternative Text",
+				}),
+			],
+		}),
+	],
+	preview: {
+		select: {
+			title: "heading",
+			image: "image",
+		},
+		prepare({ title, image }) {
+			return {
+				title: title || "Untitled",
+				subtitle: "Hero Section",
+				media: image,
+			};
+		},
+	},
+});
 
-					preview:{
-						select:{
-							title:"heading",
-							image:"image"
-						},
-						prepare({title}){
-							return{
-								title: title || "untitle",
-								subtitle: title || "hero",
-
-							}
-						}
-					}
-				});
+export default heroType;  

@@ -10,7 +10,11 @@ import { Values } from "@/components/Values";
 import { NewsLetter } from "@/components/home/NewsLetter";
 import { getHomePage } from "@/sanity/queries/homepage";
 
-export default function Home({ data }: { data: any }) {
+ 
+export default async function Home() {
+	const data = await getHomePage(); // ✅ Fetch data directly
+ 
+
 	return (
 		<div>
 			<Hero
@@ -21,7 +25,7 @@ export default function Home({ data }: { data: any }) {
 				altText={data.hero.altText}
 			/>
 
-			<LogoTicker />
+			<LogoTicker logos={data.logoTicker?.logos || [] } />
 			<OurWork />
 			<Values
 				display={true}
@@ -32,16 +36,4 @@ export default function Home({ data }: { data: any }) {
 			<NewsLetter />
 		</div>
 	);
-}
-
-// Fetch data at build time and revalidate every 60 seconds
-export const getStaticProps = async () => {
-	const data = await getHomePage();
-
-	return {
-		props: {
-			data,
-		},
-		revalidate: 60, // Incremental Static Regeneration (ISR) updates every 60s
-	};
 };

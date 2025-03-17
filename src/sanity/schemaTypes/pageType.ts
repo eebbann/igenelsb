@@ -1,5 +1,4 @@
 import { defineArrayMember, defineField, defineType } from "sanity";
-import { heroType } from "./heroType";
 
 const pageType = defineType({
 	name: "page",
@@ -9,11 +8,13 @@ const pageType = defineType({
 		defineField({
 			name: "title",
 			type: "string",
+			title: "Title",
 		}),
 		defineField({
 			name: "slug",
-			type: "string",
-			title:"slug"
+			type: "slug",
+			title: "Slug",
+			options: { source: "title", maxLength: 96 },
 		}),
 		defineField({
 			name: "pageBuilder",
@@ -21,9 +22,9 @@ const pageType = defineType({
 			title: "Page Builder",
 			of: [
 				defineArrayMember({
-					name: "hero", // Here we use the correct reference to heroType
-					type: "heroType", // Reference the heroType instead of "hero"
+					type: "heroType",
 				}),
+				defineArrayMember({ type: "logoTicker" }),
 			],
 		}),
 	],

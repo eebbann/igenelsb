@@ -1,6 +1,7 @@
 import { Hero } from "@/components/banner/Hero";
 import React from "react";
 import teamwork from "@/assets/IMG_2856.png";
+import { getHero } from "@/sanity/queries/getHero";
 interface IconProps {
 	className?: string;
 }
@@ -18,7 +19,7 @@ const CustomIcon = ({ className = "" }) => (
 	></svg>
 );
 
-const TeamGrid = () => {
+const TeamGrid = ({ heroData }: { heroData: any }) => {
 	const teams = [
 		{
 			title: "Team Wet-lab",
@@ -74,12 +75,19 @@ const TeamGrid = () => {
 	return (
 		<div>
 			<Hero
+				isHomePage={false} // Different style for About Page
+				heading={heroData.hero.heading}
+				subheading={heroData.hero.subheading}
+				heroImage={heroData.hero.heroImage}
+				altText={heroData.hero.altText}
+			/>
+			{/* <Hero
 				isHomePage={false}
 				title="Our Dynamic Team"
 				description="I-Gene Life Science Foundation is a non-profit organization founded in august 2023"
 				image={teamwork} // Now TypeScript knows this is a valid image type
 			/>
-			 
+			  */}
 
 			<div className="container text-center my-6 pt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
 				{teams.map((team, index) => (
@@ -112,5 +120,14 @@ const TeamGrid = () => {
 		</div>
 	);
 };
+export const getStaticProps = async () => {
+	const heroData = await getHero("team"); // Fetch Hero section for About Page
 
+	return {
+		props: {
+			heroData,
+		},
+		revalidate: 60, // ISR: Refresh every 60 seconds
+	};
+};
 export default TeamGrid;

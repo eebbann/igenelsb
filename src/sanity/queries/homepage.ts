@@ -12,7 +12,8 @@ export async function getHomePage() {
         slug,
         "heroImage": image.asset->url,
         "altText": image.alt
-      },"logoTicker": pageBuilder[][_type == "logoTicker"][0] {
+      },
+			"logoTicker": pageBuilder[][_type == "logoTicker"][0] {
       logos[] {
         "src": image.asset->url,
         alt
@@ -21,7 +22,5 @@ export async function getHomePage() {
     }
   `;
 
-	return await client.fetch(getPageQuery, {
-		revalidate: new Date().getSeconds(), // Revalidate the data every 60 seconds
-	});
+	return await client.fetch(getPageQuery);
 }
