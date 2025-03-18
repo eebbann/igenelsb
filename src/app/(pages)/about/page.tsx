@@ -3,7 +3,7 @@ import React from "react";
 import blood from "@/assets/blood.png";
 import { ImageGallery } from "@/components/ImageGallery";
 import image1 from "@/assets/igene.png";
-import image2 from "@/assets/product-image.png";
+import image2 from "@/assets/igene.png";
 import { Values } from "@/components/Values";
 import { Timeline } from "@/components/ui/TimeLine";
 import { data } from "@/data/DataTimeline";

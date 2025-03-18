@@ -18,8 +18,10 @@ const CustomIcon = ({ className = "" }) => (
 		className={className}
 	></svg>
 );
+export default async function TeamGrid() {
+  const heroData = await getHero("about"); // Fetching dynamically in a server component
 
-const TeamGrid = ({ heroData }: { heroData: any }) => {
+ 
 	const teams = [
 		{
 			title: "Team Wet-lab",
@@ -120,14 +122,4 @@ const TeamGrid = ({ heroData }: { heroData: any }) => {
 		</div>
 	);
 };
-export const getStaticProps = async () => {
-	const heroData = await getHero("team"); // Fetch Hero section for About Page
-
-	return {
-		props: {
-			heroData,
-		},
-		revalidate: 60, // ISR: Refresh every 60 seconds
-	};
-};
-export default TeamGrid;
+ 
