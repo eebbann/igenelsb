@@ -10,6 +10,10 @@ import { Values } from "@/components/Values";
 import { NewsLetter } from "@/components/home/NewsLetter";
 import { getHomePage } from "@/sanity/queries/homepage";
 
+export type val = {
+  message: string;
+  display: boolean;
+};
  
 export default async function Home() {
 	const data = await getHomePage(); // ✅ Fetch data directly
