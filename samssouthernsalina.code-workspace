@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "../../curemedo/curemedoplus"
+		},
+		{
+			"path": "../yourway"
 		}
 	],
 	"settings": {}

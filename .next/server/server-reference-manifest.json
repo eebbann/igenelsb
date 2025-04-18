@@ -1,39 +1,5 @@
 {
-  "node": {
-    "7f35cf7c25b47d9c5d99e0d867d5c5c235ed78b4e9": {
-      "workers": {
-        "app/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fmacbookpro%2FDownloads%2Fconicapps%2Figene%2Fnode_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%2C%5B%5B%227f35cf7c25b47d9c5d99e0d867d5c5c235ed78b4e9%22%2C%22setPerspectiveCookie%22%5D%2C%5B%227f52f015e3704cc5c7fa43f27cbe6f65b57e2cdef2%22%2C%22revalidateSyncTags%22%5D%5D%5D%2C%5B%22%2FUsers%2Fmacbookpro%2FDownloads%2Fconicapps%2Figene%2Fnode_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%2C%5B%5B%227fa33feed9f5208ec5bb643f7a2e4ee23ed608fccd%22%2C%22revalidateRootLayout%22%5D%5D%5D%5D&__client_imported__=true!",
-          "async": false
-        }
-      },
-      "layer": {
-        "app/page": "action-browser"
-      }
-    },
-    "7f52f015e3704cc5c7fa43f27cbe6f65b57e2cdef2": {
-      "workers": {
-        "app/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fmacbookpro%2FDownloads%2Fconicapps%2Figene%2Fnode_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%2C%5B%5B%227f35cf7c25b47d9c5d99e0d867d5c5c235ed78b4e9%22%2C%22setPerspectiveCookie%22%5D%2C%5B%227f52f015e3704cc5c7fa43f27cbe6f65b57e2cdef2%22%2C%22revalidateSyncTags%22%5D%5D%5D%2C%5B%22%2FUsers%2Fmacbookpro%2FDownloads%2Fconicapps%2Figene%2Fnode_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%2C%5B%5B%227fa33feed9f5208ec5bb643f7a2e4ee23ed608fccd%22%2C%22revalidateRootLayout%22%5D%5D%5D%5D&__client_imported__=true!",
-          "async": false
-        }
-      },
-      "layer": {
-        "app/page": "action-browser"
-      }
-    },
-    "7fa33feed9f5208ec5bb643f7a2e4ee23ed608fccd": {
-      "workers": {
-        "app/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fmacbookpro%2FDownloads%2Fconicapps%2Figene%2Fnode_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%2C%5B%5B%227f35cf7c25b47d9c5d99e0d867d5c5c235ed78b4e9%22%2C%22setPerspectiveCookie%22%5D%2C%5B%227f52f015e3704cc5c7fa43f27cbe6f65b57e2cdef2%22%2C%22revalidateSyncTags%22%5D%5D%5D%2C%5B%22%2FUsers%2Fmacbookpro%2FDownloads%2Fconicapps%2Figene%2Fnode_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%2C%5B%5B%227fa33feed9f5208ec5bb643f7a2e4ee23ed608fccd%22%2C%22revalidateRootLayout%22%5D%5D%5D%5D&__client_imported__=true!",
-          "async": false
-        }
-      },
-      "layer": {
-        "app/page": "action-browser"
-      }
-    }
-  },
+  "node": {},
   "edge": {},
   "encryptionKey": "O82EHK7wsmGKubzx+73T5ooa3HAVyGRHHPB5HroKiLg="
 }
