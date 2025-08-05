@@ -1,16 +1,26 @@
 {
 	"folders": [
 		{
-			"path": "../food-restaurant/samssouthernsalina"
+			"name": "Restate-frontend",
+			"path": "../../landpropy/Restate-frontend"
 		},
 		{
+			"name": "landpropy-app",
+			"path": "../../landpropy/landpropy-app"
+		},
+		{
+			"name": "igene",
 			"path": "."
 		},
 		{
-			"path": "../../curemedo/curemedoplus"
+			"name": "yourway",
+			"path": "../yourway"
 		},
 		{
-			"path": "../yourway"
+			"path": "../edugene"
+		},
+		{
+			"path": "../lov-gene"
 		}
 	],
 	"settings": {}

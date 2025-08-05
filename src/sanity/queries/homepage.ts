@@ -14,11 +14,25 @@ export async function getHomePage() {
         "altText": image.alt
       },
 			"logoTicker": pageBuilder[][_type == "logoTicker"][0] {
-      logos[] {
-        "src": image.asset->url,
-        alt
+        logos[] {
+          "src": image.asset->url,
+          alt
+        }
+      },
+      "services": pageBuilder[][_type == "serviceType"] | order(order asc) {
+        title,
+        description,
+        icon,
+        "image": image.asset->url,
+        link,
+        order
+      },
+      "newsletter": pageBuilder[][_type == "newsletterType"][0] {
+        title,
+        description,
+        buttonText,
+        placeholder
       }
-    } 
     }
   `;
 
