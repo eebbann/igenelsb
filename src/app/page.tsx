@@ -8,6 +8,7 @@ import { OurWork } from "@/components/home/OurWork";
 import { Services } from "@/components/home/Services";
 import { Values } from "@/components/Values";
 import { NewsLetter } from "@/components/home/NewsLetter";
+import { AchievementStats } from "@/components/home/AchievementStats";
 import { getHomePage } from "@/sanity/queries/homepage";
 
 export type val = {
@@ -131,6 +132,7 @@ export default async function Home() {
 				display={true}
 				message="Join our team of dedicated volunteers and make a difference in the lives of others."
 			/>
+			<AchievementStats />
 			<MarqueeSlide />
 			<Goals />
 			<NewsLetter

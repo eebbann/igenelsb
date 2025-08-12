@@ -1,7 +1,7 @@
 "use client";
 
 import { Bars3Icon, ArrowDownRightIcon } from "@heroicons/react/24/outline";
-import logo from "@/assets/igene.png"
+import logo from "@/assets/igene.png";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -10,7 +10,7 @@ import Modal from "../ui/Modal";
 const navLinks = [
 	{ name: "Home", href: "/" },
 	{ name: "About", href: "/about" },
-	{ name: "Team", href: "/team" }, 
+	{ name: "Team", href: "/team" },
 	{ name: "Blog", href: "/blog" },
 	{ name: "Contact", href: "/contact" },
 ];
@@ -22,7 +22,7 @@ export const Navbar = () => {
 			<header className="z-40 sticky top-0 backdrop-blur-lg ">
 				<div className="flex justify-center items-center py-2 bg-primary-950 text-white text-sm gap-3">
 					<p className="text-white/60 hidden md:block">
-						Become a Partner/Sponsor  for the next Igene Workshop 
+						Become a Partner/Sponsor for the next Igene Workshop
 					</p>
 					<div className="inline-flex gap-1 items-center">
 						<p>Register Here</p>
@@ -50,7 +50,7 @@ export const Navbar = () => {
 												{link.name}
 											</Link>
 										</li>
-									))} 
+									))}
 									<button
 										className="relative inline-flex overflow-hidden rounded-lg p-[1.5px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
 										onClick={() => setModalOpen(true)}
@@ -66,13 +66,19 @@ export const Navbar = () => {
 					</div>
 				</div>
 			</header>
-			<Modal open={modalOpen} onClose={() => setModalOpen(false)} title="Support I-Gene">
+			<Modal
+				open={modalOpen}
+				onClose={() => setModalOpen(false)}
+				title="Support I-Gene"
+			>
 				<div className="text-center">
 					<p className="mb-2 font-semibold">Account Details</p>
 					<p>Account Name: I-Gene Life Science Foundation</p>
 					<p>Naira Account: 0126433674</p>
 					<p>Bank: Wema Bank</p>
-					<p className="mt-4 text-sm text-gray-600">Thank you for supporting our mission!</p>
+					<p className="mt-4 text-sm text-gray-600">
+						Thank you for supporting our mission!
+					</p>
 				</div>
 			</Modal>
 		</>

@@ -1,5 +1,5 @@
 import { getTeamPage } from "@/sanity/queries/team";
-import { TeamGrid } from "@/components/team/TeamGrid";
+import TeamGroupGrid from "@/components/team/TeamGroupGrid";
 import { Hero } from "@/components/banner/Hero";
 
 export default async function TeamPage() {
@@ -145,7 +145,18 @@ export default async function TeamPage() {
 					</p>
 				</div>
 
-				<TeamGrid teamMembers={teamMembersData} />
+				<TeamGroupGrid
+					images={[
+						{ src: "/team/group-1.jpg", alt: "I-Gene Team" },
+						{ src: "/team/group-2.jpg", alt: "I-Gene Team" },
+						{ src: "/team/group-3.jpg", alt: "I-Gene Team" },
+					]}
+					caption="I-Gene Team"
+					youtubeUrl="https://youtube.com/@i-genelsf?si=vg8YVGLkaREwzAcF"
+					linkedinUrl="https://linkedin.com/in/i-gene-life-science-foundation"
+				/>
+
+				{/* Removed individual member grid as per request to focus on group images */}
 			</div>
 		</div>
 	);

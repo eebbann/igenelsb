@@ -1,18 +1,18 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { 
-	MapPinIcon, 
-	PhoneIcon, 
-	EnvelopeIcon, 
-	GlobeAltIcon 
+import {
+	MapPinIcon,
+	PhoneIcon,
+	EnvelopeIcon,
+	GlobeAltIcon,
 } from "@heroicons/react/24/outline";
-import { 
-	IconBrandFacebook, 
-	IconBrandTwitter, 
-	IconBrandInstagram, 
+import {
+	IconBrandFacebook,
+	IconBrandTwitter,
+	IconBrandInstagram,
 	IconBrandLinkedin,
-	IconBrandYoutube 
+	IconBrandYoutube,
 } from "@tabler/icons-react";
 import logo from "@/assets/igene.png";
 
@@ -39,8 +39,16 @@ const Footer = () => {
 		{ icon: IconBrandFacebook, href: "#", label: "Facebook" },
 		{ icon: IconBrandTwitter, href: "#", label: "Twitter" },
 		{ icon: IconBrandInstagram, href: "#", label: "Instagram" },
-		{ icon: IconBrandLinkedin, href: "#", label: "LinkedIn" },
-		{ icon: IconBrandYoutube, href: "#", label: "YouTube" },
+		{
+			icon: IconBrandLinkedin,
+			href: "https://linkedin.com/in/i-gene-life-science-foundation",
+			label: "LinkedIn",
+		},
+		{
+			icon: IconBrandYoutube,
+			href: "https://youtube.com/@i-genelsf?si=vg8YVGLkaREwzAcF",
+			label: "YouTube",
+		},
 	];
 
 	return (
@@ -50,17 +58,18 @@ const Footer = () => {
 					{/* Logo and Description */}
 					<div className="lg:col-span-1">
 						<div className="flex items-center mb-4">
-							<Image 
-								src={logo} 
-								alt="I-Gene Logo" 
-								width={120} 
+							<Image
+								src={logo}
+								alt="I-Gene Logo"
+								width={120}
 								height={120}
 								className="h-12 w-auto"
 							/>
 						</div>
 						<p className="text-gray-300 text-sm leading-relaxed mb-4">
-							Empowering the next generation of life scientists through innovative education, 
-							mentorship, and hands-on learning experiences.
+							Empowering the next generation of life scientists through
+							innovative education, mentorship, and hands-on learning
+							experiences.
 						</p>
 						<div className="flex space-x-4">
 							{socialLinks.map(({ icon: Icon, href, label }) => (
@@ -118,27 +127,38 @@ const Footer = () => {
 								<MapPinIcon className="w-5 h-5 text-primary-400 mt-0.5 flex-shrink-0" />
 								<div>
 									<p className="text-gray-300 text-sm">
-										123 Science Avenue<br />
-										Research District<br />
+										123 Science Avenue
+										<br />
+										Research District
+										<br />
 										City, State 12345
 									</p>
 								</div>
 							</div>
 							<div className="flex items-center space-x-3">
 								<PhoneIcon className="w-5 h-5 text-primary-400 flex-shrink-0" />
-								<a href="tel:+1234567890" className="text-gray-300 hover:text-white text-sm transition-colors">
+								<a
+									href="tel:+1234567890"
+									className="text-gray-300 hover:text-white text-sm transition-colors"
+								>
 									+1 (234) 567-8900
 								</a>
 							</div>
 							<div className="flex items-center space-x-3">
 								<EnvelopeIcon className="w-5 h-5 text-primary-400 flex-shrink-0" />
-								<a href="mailto:info@igene.org" className="text-gray-300 hover:text-white text-sm transition-colors">
+								<a
+									href="mailto:info@igene.org"
+									className="text-gray-300 hover:text-white text-sm transition-colors"
+								>
 									info@igene.org
 								</a>
 							</div>
 							<div className="flex items-center space-x-3">
 								<GlobeAltIcon className="w-5 h-5 text-primary-400 flex-shrink-0" />
-								<a href="https://igene.org" className="text-gray-300 hover:text-white text-sm transition-colors">
+								<a
+									href="https://igene.org"
+									className="text-gray-300 hover:text-white text-sm transition-colors"
+								>
 									www.igene.org
 								</a>
 							</div>
@@ -153,13 +173,22 @@ const Footer = () => {
 							© {currentYear} I-Gene. All rights reserved.
 						</div>
 						<div className="flex space-x-6 mt-4 md:mt-0">
-							<Link href="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">
+							<Link
+								href="/privacy"
+								className="text-gray-400 hover:text-white text-sm transition-colors"
+							>
 								Privacy Policy
 							</Link>
-							<Link href="/terms" className="text-gray-400 hover:text-white text-sm transition-colors">
+							<Link
+								href="/terms"
+								className="text-gray-400 hover:text-white text-sm transition-colors"
+							>
 								Terms of Service
 							</Link>
-							<Link href="/sitemap" className="text-gray-400 hover:text-white text-sm transition-colors">
+							<Link
+								href="/sitemap"
+								className="text-gray-400 hover:text-white text-sm transition-colors"
+							>
 								Sitemap
 							</Link>
 						</div>

@@ -34,10 +34,10 @@ export default async function ContactPage() {
 
 	const socialMedia = data?.socialMedia || {
 		twitter: "https://twitter.com/igene_africa",
-		linkedin: "https://linkedin.com/company/igene-africa",
+		linkedin: "https://linkedin.com/in/i-gene-life-science-foundation",
 		facebook: "https://facebook.com/igene.africa",
 		instagram: "https://instagram.com/igene_africa",
-		youtube: "https://youtube.com/@igene-africa",
+		youtube: "https://youtube.com/@i-genelsf?si=vg8YVGLkaREwzAcF",
 	};
 	const formFields = data?.formFields || [
 		{
