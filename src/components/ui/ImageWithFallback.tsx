@@ -1,14 +1,14 @@
 "use client";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
 
 interface ImageWithFallbackProps {
-	src: string;
+	src: string | StaticImageData;
 	alt: string;
 	width: number;
 	height: number;
 	className?: string;
-	fallbackSrc?: string;
+	fallbackSrc?: string | StaticImageData;
 	fallbackText?: string;
 }
 

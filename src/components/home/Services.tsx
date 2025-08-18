@@ -48,7 +48,7 @@ export const Services = ({ services }: ServicesProps) => {
 							Our Services
 						</h2>
 						<p className="text-gray-600 text-lg max-w-2xl mx-auto">
-							We're working on exciting new programs and services. Check back
+							We&apos;re working on exciting new programs and services. Check back
 							soon for updates on our innovative life sciences education
 							initiatives!
 						</p>

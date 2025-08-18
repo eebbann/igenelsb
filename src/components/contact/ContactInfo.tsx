@@ -5,13 +5,28 @@ import {
 	ClockIcon,
 } from "@heroicons/react/24/outline";
 
+interface AddressObject {
+    street?: string;
+    city?: string;
+    state?: string;
+    country?: string;
+    postalCode?: string;
+}
+
+interface WorkingHoursObject {
+    weekdays?: string;
+    weekends?: string;
+    timezone?: string;
+}
+
 interface ContactInfoProps {
-	contactInfo: {
-		address?: string;
-		phone?: string;
-		email?: string;
-		workingHours?: string;
-	};
+    contactInfo: {
+        address?: string | AddressObject;
+        phone?: string;
+        email?: string;
+        workingHours?: string | WorkingHoursObject;
+        officeHours?: string | WorkingHoursObject;
+    };
 	socialMedia: {
 		facebook?: string;
 		twitter?: string;
@@ -53,6 +68,20 @@ const YouTubeIcon = ({ className }: { className?: string }) => (
 );
 
 export const ContactInfo = ({ contactInfo, socialMedia }: ContactInfoProps) => {
+    const formatAddress = (address?: string | AddressObject) => {
+        if (!address) return undefined;
+        if (typeof address === "string") return address;
+        const parts = [address.street, address.city, address.state, address.country, address.postalCode]
+            .filter(Boolean)
+            .join(", ");
+        return parts || undefined;
+    };
+
+    const working = (contactInfo.workingHours ?? contactInfo.officeHours) as
+        | string
+        | WorkingHoursObject
+        | undefined;
+
 	const socialLinks = [
 		{ icon: FacebookIcon, url: socialMedia.facebook, label: "Facebook" },
 		{ icon: TwitterIcon, url: socialMedia.twitter, label: "Twitter" },
@@ -66,18 +95,18 @@ export const ContactInfo = ({ contactInfo, socialMedia }: ContactInfoProps) => {
 			<div>
 				<h2 className="text-3xl font-bold text-gray-900 mb-4">Get in Touch</h2>
 				<p className="text-gray-600 text-lg">
-					We'd love to hear from you. Send us a message and we'll respond as
+					We&apos;d love to hear from you. Send us a message and we&apos;ll respond as
 					soon as possible.
 				</p>
 			</div>
 
 			<div className="space-y-6">
-				{contactInfo.address && (
+                {formatAddress(contactInfo.address) && (
 					<div className="flex items-start space-x-4">
 						<MapPinIcon className="w-6 h-6 text-primary-600 mt-1 flex-shrink-0" />
 						<div>
 							<h3 className="font-semibold text-gray-900">Address</h3>
-							<p className="text-gray-600">{contactInfo.address}</p>
+                            <p className="text-gray-600">{formatAddress(contactInfo.address)}</p>
 						</div>
 					</div>
 				)}
@@ -112,12 +141,20 @@ export const ContactInfo = ({ contactInfo, socialMedia }: ContactInfoProps) => {
 					</div>
 				)}
 
-				{contactInfo.workingHours && (
+                {working && (
 					<div className="flex items-start space-x-4">
 						<ClockIcon className="w-6 h-6 text-primary-600 mt-1 flex-shrink-0" />
 						<div>
 							<h3 className="font-semibold text-gray-900">Working Hours</h3>
-							<p className="text-gray-600">{contactInfo.workingHours}</p>
+                            {typeof working === "string" ? (
+                                <p className="text-gray-600">{working}</p>
+                            ) : (
+                                <div className="text-gray-600">
+                                    {working.weekdays && <p>{working.weekdays}</p>}
+                                    {working.weekends && <p>{working.weekends}</p>}
+                                    {working.timezone && <p>{working.timezone}</p>}
+                                </div>
+                            )}
 						</div>
 					</div>
 				)}

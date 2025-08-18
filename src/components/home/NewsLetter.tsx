@@ -98,7 +98,7 @@ export function NewsLetter({
 				{submitStatus === "success" && (
 					<div className="relative z-10 mt-4 p-4 bg-green-50 border border-green-200 rounded-lg text-center">
 						<p className="text-green-800">
-							Thank you for subscribing! You'll receive updates soon.
+							Thank you for subscribing! You&apos;ll receive updates soon.
 						</p>
 					</div>
 				)}
