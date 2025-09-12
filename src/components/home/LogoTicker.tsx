@@ -4,11 +4,31 @@
 import Image from "next/image";
 import { useState } from "react";
 
+// Import logo images from src/assets
+import logoApex from "@/assets/logo-apex.png";
+import logoBiochemical from "@/assets/logo-biochemical.png";
+import logoBiologix from "@/assets/logo-biologix.png";
+import logoInqabaBiotech from "@/assets/logo-inqababiotech.png";
+import logoPulse from "@/assets/logo-pulse.png";
+import logoSfn from "@/assets/logo-sfn.png";
+import logoWema from "@/assets/logo-wema.png";
+
 interface LogoTickerProps {
-	logos: { src: string; alt: string }[];
+	logos?: { src: string; alt: string }[];
 }
 
-export const LogoTicker = ({ logos }: LogoTickerProps) => {
+// Default logos mapping
+const defaultLogos = [
+	{ src: logoApex, alt: "Apex Laboratory" },
+	{ src: logoBiochemical, alt: "Biochemical Sciences" },
+	{ src: logoBiologix, alt: "Biologix Research" },
+	{ src: logoInqabaBiotech, alt: "Inqaba Biotech" },
+	{ src: logoPulse, alt: "Pulse Medical" },
+	{ src: logoSfn, alt: "Science Foundation Network" },
+	{ src: logoWema, alt: "WEMA Bank" },
+];
+
+export const LogoTicker = ({ logos = defaultLogos }: LogoTickerProps) => {
 	const [hoveredLogo, setHoveredLogo] = useState<string | null>(null);
 
 	return (

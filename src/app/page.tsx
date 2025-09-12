@@ -28,17 +28,7 @@ export default async function Home() {
 		altText: "I-Gene Hero",
 	};
 
-	const logoTickerData = data?.logoTicker || {
-		logos: [
-			{ src: "/assets/logo-apex.png", alt: "Apex Laboratory" },
-			{ src: "/assets/logo-biochemical.png", alt: "Biochemical Sciences" },
-			{ src: "/assets/logo-biologix.png", alt: "Biologix Research" },
-			{ src: "/assets/logo-inqababiotech.png", alt: "Inqaba Biotech" },
-			{ src: "/assets/logo-pulse.png", alt: "Pulse Medical" },
-			{ src: "/assets/logo-sfn.png", alt: "Science Foundation Network" },
-			{ src: "/assets/logo-wema.png", alt: "WEMA Bank" },
-		],
-	};
+	const logoTickerData = data?.logoTicker || null;
 	const servicesData = data?.services || [
 		{
 			title: "DNA Extraction Workshops",
@@ -125,7 +115,7 @@ export default async function Home() {
 				altText={heroData.altText}
 			/>
 
-			<LogoTicker logos={logoTickerData.logos} />
+			<LogoTicker logos={logoTickerData?.logos} />
 			<Services services={servicesData} />
 			<OurWork />
 			<Values
