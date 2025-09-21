@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import leftImg from "@/assets/left-display.jpg";
 import Background from "./BackDrop";
 import SubHeading from "../layout/SubHeading";
@@ -41,15 +42,15 @@ export const OurWork = () => {
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 					<div className="relative">
 						<div className="rounded-2xl overflow-hidden shadow-2xl">
-				<Image
-					src={leftImg}
+							<Image
+								src={leftImg}
 								alt="Our work impact"
 								width={600}
 								height={600}
 								className="object-cover w-full h-[500px]"
 							/>
 							<div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-			</div>
+						</div>
 
 						{/* Floating stats cards */}
 						<div className="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-lg p-4">
@@ -58,7 +59,7 @@ export const OurWork = () => {
 								<div className="text-sm text-gray-600">Students Impacted</div>
 							</div>
 						</div>
-				</div>
+					</div>
 
 					<div className="space-y-8">
 						<div>
@@ -102,16 +103,25 @@ export const OurWork = () => {
 								<HeartIcon className="w-5 h-5 mr-2" />
 								Donate Now
 							</button>
-							<button className="border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+							<Link
+								href="/about"
+								className="border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors inline-flex items-center justify-center"
+							>
 								Learn More
-							</button>
-							<Modal open={modalOpen} onClose={() => setModalOpen(false)} title="Support I-Gene">
+							</Link>
+							<Modal
+								open={modalOpen}
+								onClose={() => setModalOpen(false)}
+								title="Support I-Gene"
+							>
 								<div className="text-center">
 									<p className="mb-2 font-semibold">Account Details</p>
 									<p>Account Name: I-Gene Life Science Foundation</p>
 									<p>Naira Account: 0126433674</p>
 									<p>Bank: Wema Bank</p>
-									<p className="mt-4 text-sm text-gray-600">Thank you for supporting our mission!</p>
+									<p className="mt-4 text-sm text-gray-600">
+										Thank you for supporting our mission!
+									</p>
 								</div>
 							</Modal>
 						</div>

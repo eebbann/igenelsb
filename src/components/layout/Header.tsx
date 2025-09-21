@@ -17,6 +17,7 @@ const navLinks = [
 
 export const Navbar = () => {
 	const [modalOpen, setModalOpen] = useState(false);
+	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	return (
 		<>
 			<header className="z-40 sticky top-0 backdrop-blur-lg ">
@@ -38,7 +39,12 @@ export const Navbar = () => {
 					<div className="container">
 						<div className="flex items-center justify-between">
 							<Image src={logo} alt="igene logo" height={140} width={140} />
-							<Bars3Icon width={25} height={25} className="md:hidden" />
+							<button
+								className="md:hidden"
+								onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+							>
+								<Bars3Icon width={25} height={25} />
+							</button>
 							<nav className="hidden md:flex gap-6 items-center">
 								<ul className="flex space-x-4 items-center">
 									{navLinks.map((link) => (
@@ -65,6 +71,35 @@ export const Navbar = () => {
 						</div>
 					</div>
 				</div>
+
+				{/* Mobile Menu */}
+				{mobileMenuOpen && (
+					<div className="md:hidden bg-white border-t border-gray-200">
+						<div className="container py-4">
+							<nav className="flex flex-col space-y-3">
+								{navLinks.map((link) => (
+									<Link
+										key={link.name}
+										href={link.href}
+										className="text-gray-600 hover:text-gray-900 py-2"
+										onClick={() => setMobileMenuOpen(false)}
+									>
+										{link.name}
+									</Link>
+								))}
+								<button
+									className="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-semibold transition-colors text-left"
+									onClick={() => {
+										setModalOpen(true);
+										setMobileMenuOpen(false);
+									}}
+								>
+									Support
+								</button>
+							</nav>
+						</div>
+					</div>
+				)}
 			</header>
 			<Modal
 				open={modalOpen}

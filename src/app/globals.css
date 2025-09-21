@@ -15,15 +15,35 @@
 		@apply bg-transparent text-primary-950 py-2 px-6 border border-primary-950 rounded-lg
 	}
 
-		.logo-ticker-image {
-			@apply h-auto w-52 object-contain grayscale transition-all duration-300 hover:grayscale-0;
-		}
-		.tag{
-			@apply text-sm inline-flex border border-[#222]/10 px-3 py-1 rounded-lg tracking-tight
-		}
+	.logo-ticker-image {
+		@apply h-auto w-52 object-contain grayscale transition-all duration-300 hover:grayscale-0;
+	}
+
+	.tag {
+		@apply text-sm inline-flex border border-[#222]/10 px-3 py-1 rounded-lg tracking-tight
+	}
 }
+
 @layer utilities {
 	.grayscale {
 		filter: grayscale(100%);
+	}
+
+	@keyframes infinite-scroll {
+		0% {
+			transform: translateX(0);
+		}
+
+		100% {
+			transform: translateX(-50%);
+		}
+	}
+
+	.animate-infinite-scroll {
+		animation: infinite-scroll 20s linear infinite;
+	}
+
+	.animation-paused {
+		animation-play-state: paused;
 	}
 }
