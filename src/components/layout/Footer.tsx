@@ -36,9 +36,21 @@ const Footer = () => {
 	];
 
 	const socialLinks = [
-		{ icon: IconBrandFacebook, href: "#", label: "Facebook" },
-		{ icon: IconBrandTwitter, href: "#", label: "Twitter" },
-		{ icon: IconBrandInstagram, href: "#", label: "Instagram" },
+		{
+			icon: IconBrandFacebook,
+			href: "https://facebook.com/igene.africa",
+			label: "Facebook",
+		},
+		{
+			icon: IconBrandTwitter,
+			href: "https://twitter.com/igene_africa",
+			label: "Twitter",
+		},
+		{
+			icon: IconBrandInstagram,
+			href: "https://instagram.com/igene_africa",
+			label: "Instagram",
+		},
 		{
 			icon: IconBrandLinkedin,
 			href: "https://linkedin.com/in/i-gene-life-science-foundation",

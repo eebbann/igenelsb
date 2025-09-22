@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
+import emailjs from "@emailjs/browser";
 
 interface FormField {
 	name: string;
@@ -35,17 +36,21 @@ export const ContactForm = ({ formFields }: ContactFormProps) => {
 		setSubmitStatus("idle");
 
 		try {
-			const response = await fetch("/api/contact", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify(formData),
-			});
+			// EmailJS configuration
+			const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+			const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+			const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
 
-			if (!response.ok) {
-				throw new Error("Failed to submit form");
-			}
+			// Prepare template parameters
+			const templateParams = {
+				from_name: formData.name || "Unknown",
+				from_email: formData.email || "No email provided",
+				message: formData.message || "No message provided",
+				to_email: process.env.NEXT_PUBLIC_ADMIN_EMAIL || "admin@igene.org",
+			};
+
+			// Send email using EmailJS
+			await emailjs.send(serviceId, templateId, templateParams, publicKey);
 
 			setSubmitStatus("success");
 			setFormData({});
