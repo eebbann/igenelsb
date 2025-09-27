@@ -27,7 +27,7 @@ export default function WorkshopsPage() {
 							</p>
 
 							<h3 className="text-xl font-semibold text-gray-900 mb-4">
-								What You'll Learn
+								What You&apos;ll Learn
 							</h3>
 							<ul className="space-y-3 mb-8">
 								<li className="flex items-start">

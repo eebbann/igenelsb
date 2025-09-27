@@ -37,7 +37,7 @@ export default function TermsPage() {
 							</h3>
 							<p className="text-gray-700 mb-4">
 								Permission is granted to temporarily download one copy of the
-								materials on I-Gene's website for personal, non-commercial
+								materials on I-Gene&apos;s website for personal, non-commercial
 								transitory viewing only.
 							</p>
 							<p className="text-gray-700">
@@ -77,13 +77,13 @@ export default function TermsPage() {
 								Disclaimer
 							</h3>
 							<p className="text-gray-700">
-								The materials on I-Gene's website are provided on an 'as is'
-								basis. I-Gene makes no warranties, expressed or implied, and
-								hereby disclaims and negates all other warranties including
-								without limitation, implied warranties or conditions of
-								merchantability, fitness for a particular purpose, or
-								non-infringement of intellectual property or other violation of
-								rights.
+								The materials on I-Gene&apos;s website are provided on an
+								&apos;as is&apos; basis. I-Gene makes no warranties, expressed
+								or implied, and hereby disclaims and negates all other
+								warranties including without limitation, implied warranties or
+								conditions of merchantability, fitness for a particular purpose,
+								or non-infringement of intellectual property or other violation
+								of rights.
 							</p>
 						</section>
 
