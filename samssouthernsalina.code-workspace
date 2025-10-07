@@ -1,0 +1,27 @@
+{
+	"folders": [
+		{
+			"name": "Restate-frontend",
+			"path": "../../landpropy/Restate-frontend"
+		},
+		{
+			"name": "landpropy-app",
+			"path": "../../landpropy/landpropy-app"
+		},
+		{
+			"name": "igene",
+			"path": "."
+		},
+		{
+			"name": "yourway",
+			"path": "../yourway"
+		},
+		{
+			"path": "../edugene"
+		},
+		{
+			"path": "../lov-gene"
+		}
+	],
+	"settings": {}
+}
